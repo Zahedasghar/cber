@@ -1,84 +1,476 @@
 ---
-<<<<<<< HEAD
-title: "Zahíd Asghar"
-image: "zahid.jpg"
-links:
-  - label: Resume
-    url: "https://linkedin.com/in/zahid-asghar-50763b21/"
-  - label: Blog
-    url: "https://zahidasghar.medium.com/"
-  - label: Twitter
-    url: "https://twitter.com/zahedasghar"
-=======
-title: "Sigríður Björndotter"
-image: "sigridur.jpg"
-links:
-  - label: Resume
-    url: "https://linkedin.com/"
-  - label: Blog
-    url: "https://medium.com/"
-  - label: SoundCloud
-    url: "https://soundcloud.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
->>>>>>> ec103f65154d65a1544bbe676ee1f1e8383ffbfc
+title: "2nd International Conference, CBER IBA"
+subtitle: "Challenges for Future Jobs and Future of Universities"
+author: "Zahid Asghar"
+institute: "Quaid-i-Azam University, Islamabad"
+date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
-  postcards::solana
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, extra.css]
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
 ---
- 
-## Bio
 
-<<<<<<< HEAD
-Zahíð Asghar is Professor at School of Economics, with special interests in  applied economics, econometric, applied statistics, data analysis, trainings and data visualization. He is 
-living in Islamabad, Pakistan. His research both in applied economics and applied statistics appeared in leading national and international journals.He has been conducting trainings on making sense of data and strong communicator of critical thinking with data and overcoming cognitive biases while doing policy analysis.He propagates new education accounting system in higher education system as per needs of the fourth industrial revolution.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=4, fig.retina=2, 
+  out.width="100%",
+  message = FALSE
+)
+```
 
-## Education
 
-**PIDE** | Islamabad, Pakistan
+```{r xaringanthemer, echo=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#035AA6",
+  secondary_color = "#03A696",
+  colors = c(yellow = "#FFFC31", pink = "#E56399",orange= "#fb5607",
+ blue_violet   = "#8338ec",
+ zomp          = "#38A88E",
+ shadow        = "#87826E",
+ blue          = "#1381B0",
+ yellow_orange = "#FF961C")
+)
+```
 
-PhD | 2007
+```{r qau-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "IBA.png"
+)
+```
 
-**BZU** | Multan, Pakistan
+---
+class: center inverse title-slide
+background-image: url(iba.jpg)
+background-position:  100% 100%
+background-size:  contain
+# 2nd Annual Conference : CBER, IBA
+<img src="cber.png" width="300px"/> 
+## Challenges for future universities and future jobs
+### Zahid Asghar, Quaid-i-Azam University, Islamabad
 
-MSc | 1993
+---
 
-## Experience
+class: top left inverse title-slide hide_logo 
+background-image: url(cber.png)
+background-position: 100% 0%
+background-size: 40% 
 
-**Professor** | School of Economics | December 2018 - Present
+## Overview
 
-**Director** | School of Economics | Jan 2019 - Jan 2022
+--
 
-**Registrar** | Quaid-i-Azam University | Feb 2020 - Feb 2021
+### stangnant export, stagnant productivity 
 
-**Senior Faculty** | NIBAF, State Bank of Pakistan | Dec 2011 - Dec 2013
+--
 
-**Consultant** | Sultan Qaboos University, Oman | Spring 2009, Fall 2010
-=======
-Sigríður Björndotter is a musician, vocalist, and live entertainment consultant
-living in Buenos Aires, Argentina. Her writing has appeared in Rolling Stone,
-Billboard, and NME, and she is a frequent contributor to National Public Radio's 
-*All Songs Considered*. She has been raising Pembroke Welsh Corgis since the age
-of six, and she has collected Casio watches since the age of ten.
+### AI, ML, Robotics : Future Jobs Challenges
 
-## Education
+--
+### Graduates awareness and readiness for opportunities
 
-**INSEAD** | Fontainebleau, France
+--
 
-M.B.A. | August 2014 - June 2015
+> ### Thinking from forced feed or factory model to new higher education system
 
-**The Juilliard School** | New York, NY
+--
 
-B.F.A. in Music Performance | August 2005 - May 2009
+### Industria era vs digital era higher education system
 
-## Experience
+--
 
-**Freelance** | Live Entertainment Consultant | August 2018 - Present
+### Way-forward
 
-**Cercle** | Producer | August 2018 - Present
+---
 
-**National Public Radio** | Producer | May 2015 - July 2018
+class: top left  hide_logo 
+background-image: url(cber.png)
+background-position: 100% 0%
+background-size: 40% 
 
-**NME Magazine** | Editor | July 2014 - July 2016
 
-**Iceland Symphony Orchestra** | Cellist | October 2009 - June 2014
->>>>>>> ec103f65154d65a1544bbe676ee1f1e8383ffbfc
+# .orange[ Productivity and BOT] 
+.pull-left[<img 
+src="productivity_stagnation.png" 
+alt = "Productivity comparison with India and Bangladesh"
+width="px"
+/>
+
+]
+
+.pull-right[<img 
+src="export_import.png" 
+alt = "Divergence between export and import"
+width="px"
+/>
+]
+
+---
+
+.pull-left[
+### Single does of education
+<img 
+src="oldeconomy.png" 
+alt = "Linear parth from learning to job to retirement"
+width="px"
+/>
+] <!--end of pull left-->
+
+.pull-right[
+### Leap from Old to New Reality
+<img 
+src="New_reality.png" 
+alt="Learn, Engage, Learn, Engage and Learn, Engage ..."
+width="px"
+/>
+] <!--end of pull right-->
+
+---
+
+class: top left  hide_logo 
+background-image: url(cber.png)
+background-position: 100% 0%
+background-size: 30%
+
+    
+.pull-left[
+### Old to New Reality
+<img 
+src="old_to_new_eco.png" 
+alt = "Female common black lemur with brown-orange fur 
+and white ear tufts"
+width="px"
+/>
+] <!--end of pull left-->
+
+.pull-right[
+### Rotuine vs Nonroutine
+<img 
+src="routine_nonroutine.png" 
+alt="Male common black lemur with rich black fur covering their entire body, and black ear tufts"
+width="500px"
+/>
+] <!--end of pull right--> 
+
+---
+class: top left  hide_logo 
+background-image: url(cber.png)
+background-position: 100% 0%
+background-size: 40%
+
+
+# Skill-gap
+
+> ##   .pink[Gone are the days of a straight-line path through college to work to promotion to career to retirement.]
+
+.pull-left[
+## Upskilling  
+### .pink[Upskilling is deepening your knowledge and skills in your current domain.]  
+
+]
+
+--
+.pull-right[
+## Reskilling
+### .pink[Reskilling is extending your knowledge and skills to new domains.]
+]
+---
+class:
+background-image: url(Future.gif)
+background-position: 100% 0%
+background-size: cover
+
+---
+
+
+class: top left 
+background-image: url(reskilling.gif)
+background-position: 100% 0%
+background-size: cover 
+
+
+---
+class:
+background-image: url(reskill.gif)
+background-position: 100% 0%
+background-size: cover
+
+---
+class:   
+background-image: url(smart.gif)
+background-position: 100% 0%
+background-size: 70%
+
+---
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readr)
+library(gridExtra)
+Career_survey <- read_csv("career_survey.csv")
+Career_survey <- read_csv("career_survey.csv")
+career<-Career_survey %>% rename(time=Timestamp,name=`Name (Optional)`,email=`Email (Optional)`,program=`Program of study`, subject= `Name of the degree Program (e.g BBA/BS Sociology/...)`, career_entry=`How do you feel about career planning?`, tech_challenges=`Do you think that Artificial Intelligence, Machine Learning, Robotics and Other automation are serious threats to your job prospects in 5 to 10 years times.`, notfamily_career=`Have you learned about different careers other than those of your family careers?`, job_info=`Do you know how to find information about jobs and careers?`
+, future_job=`Have you thought about how jobs and careers may change in the future?`,job_options=`Do you understand the options you have for education and work after you leave university?`)
+```
+
+```{r rename-variables, echo=FALSE, message=FALSE, warning=FALSE}
+career<-career %>% rename(
+  cv_creation=`Do you feel you can create a CV?`,skill_strengths=`Can you list your strengths related to the skills you possess?`,future_plan= `Do you have ideas about what you might do in the future?`,skill_job_match=`Do you have ideas about which careers match your interests and skills?`
+,career_interest=`Do you know yet what career areas you are interested in?`, group_talk=`Are you comfortable speaking in front of a group of people?`,team_skills= `Over the last year, have you developed listening, teamwork and problem solving skills?`,comm_skills=`How would you rate your strength in the following career skills? [Communcation skill]`,writing_skills=`How would you rate your strength in the following career skills? [Communicating in writing]`,working_data_numbers=`How would you rate your strength in the following career skills? [Working with data and numbers]`,working_with_people=`How would you rate your strength in the following career skills? [Working with people]`, dressing_properly=`How would you rate your strength in the following career skills? [Dressing appropriately for a workplace]`,punctuality=`How would you rate your strength in the following career skills? [Being on time for work or meetings]`, attendance=`How would you rate your strength in the following career skills? [Having good attendance]`,workplace_safety=`How would you rate your strength in the following career skills? [Understanding workplace safety rules]`,motivation_and_initiative=`How would you rate your strength in the following career skills? [Being motinated and taking initiative]`,other_comments=`Anything you want to say about future career challenges and opportunities or related feedback`)
+
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#career1<-career %>% mutate_at(c("tech_challenges","notfamily_career","job_info","future_job","job_options","skill_strengths","cv_creation","group_talk","future_plan","skill_job_match","team_skills"), funs(recode(.,`No, not yet`=1, `No , not yet`=1, `Probably, I'm not sure`=2, `Yes to some extent`=3,`Yes to a great extent`=4,.default = NaN)))
+#career %>% select(comm_skills) %>% group_by(comm_skills) %>% 
+#  summarise(n=n()) %>% 
+#  mutate(freq = n*100 / sum(n))
+
+```
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+c1 <- 
+  career %>% 
+  select(comm_skills) %>% 
+  mutate(comm_skills = fct_relevel(.f = comm_skills, c("Weak", "In-between", "Strong", "Very Strong"))) %>%
+  ggplot(aes(x=comm_skills)) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0, 0), breaks = scales::pretty_breaks(15)) +
+  labs(
+    title = "How would you rate your strength  in the following career skills?"
+  , x     = "Common Skills"
+  , y     = "Frequency"
+    ) + 
+  theme_classic() + 
+  coord_flip() +
+  theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
+```
+
+
+```{r echo=FALSE}
+c2<-career %>% select(career_entry) %>% 
+  ggplot(aes(x=career_entry))+geom_bar(position = 'dodge')+labs(title = "How do you feel about career  planning?")+theme_minimal()+coord_flip()+theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
+gA1 <- ggplotGrob(c1)
+ gB1 <- ggplotGrob(c2)
+ maxWidth = grid::unit.pmax(gA1$widths[2:5], gB1$widths[2:5])
+ gA1$widths[2:5] <- as.list(maxWidth)
+ gB1$widths[2:5] <- as.list(maxWidth)
+
+```
+
+
+```{r echo=FALSE, warning=FALSE}
+c3<- career %>% select(group_talk) %>% ggplot(aes(x=group_talk))+geom_bar(position = 'dodge')+labs(title = "How do you feel about career planning?")+theme_minimal()+coord_flip()+theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
+
+
+```
+
+--- 
+## Skill Strength
+
+```{r echo=FALSE, warning=FALSE}
+c4<-career %>% select(skill_strengths) %>% ggplot(aes(x=skill_strengths))+geom_bar(position = 'dodge')+labs(title = "Can you list your strengths related \n to the skills you possess?")+theme_minimal()+coord_flip()+theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
+
+```
+
+
+```{r echo=FALSE, warning=FALSE}
+
+c5<-career %>% select(team_skills) %>% ggplot(aes(x=team_skills))+geom_bar(position = 'dodge')+labs(title = "Over the last year, have you developed \n listening, teamwork and problem solving skills?`")+theme_minimal()+coord_flip()
+gA11 <- ggplotGrob(c3)
+ gB11 <- ggplotGrob(c4)
+ gC11<-ggplotGrob(c5)
+ maxWidth = grid::unit.pmax(gA11$widths[2:5], gB11$widths[2:5],gC11$widths[2:5])
+ gA11$widths[2:5] <- as.list(maxWidth)
+ gB11$widths[2:5] <- as.list(maxWidth)
+ gC11$widths[2:5] <- as.list(maxWidth)
+ grid.arrange(gA1, gB1, ncol=1)
+
+grid.arrange(gB11,gC11, ncol=1)
+```
+
+---
+##  Skills Learning
+<img 
+src="skills.png" 
+alt = "How interviews rate their skills"
+width="800px"
+/>
+
+```{r, echo=FALSE, warning=FALSE,message=FALSE}
+#c5
+```
+
+
+
+```{r echo=FALSE, warning=FALSE}
+comm_skills_tble<-career %>% select(comm_skills) %>% group_by(comm_skills) %>% 
+  summarise(n=n()) 
+writing_skills_tbl<-career %>% select(writing_skills) %>%group_by(writing_skills) %>%  summarise(n=n())
+working_data_numbers_tbl<-career %>% select(working_data_numbers) %>% group_by(working_data_numbers) %>% summarise(n=n())
+punctuality_tbl<-career %>% select(punctuality) %>%group_by(punctuality) %>%  summarise(n=n())
+working_with_people_tbl<-career %>% select(working_with_people) %>% group_by(working_with_people) %>% summarise(n=n())
+attendance_tbl<-career %>% select(attendance) %>% group_by(attendance) %>% summarise(n=n())
+dressing_tbl<-career %>% select(dressing_properly) %>% group_by(dressing_properly)%>% summarise(n=n())
+
+motivation_tbl<-career %>% select(motivation_and_initiative) %>%group_by(motivation_and_initiative) %>%  summarise(n=n())
+dta <- qpcR:::cbind.na(punctuality_tbl,writing_skills_tbl,motivation_tbl,attendance_tbl,dressing_tbl,motivation_tbl,working_data_numbers_tbl,working_with_people_tbl)
+
+cat_summary<-read.csv("dta_summary.csv")
+```
+
+---
+## Smart vs hardwork
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+#cat_summary  %>% 
+#ggplot(aes(x=Categories, y=Value))+geom_bar()+labs(title = "Over the last year, have you developed listening, teamwork and problem solving skills?`")
+
+p1<-cat_summary %>% filter(Categories=="Very_strong" ) %>% 
+  ggplot(aes(Variable, Value, fill = Categories)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  theme_bw()+labs(title = " **Very_Strong** skills")+coord_flip()
+p2<-cat_summary %>% filter(Categories=="In-between" ) %>% 
+  ggplot(aes(Variable, Value, fill = Categories)) +
+  geom_bar(position = "dodge", stat = "identity") +
+  theme_bw()+labs(title=" **In-between** skills")+coord_flip()
+library(gridExtra)
+
+gA <- ggplotGrob(p1)
+ gB <- ggplotGrob(p2)
+ maxWidth = grid::unit.pmax(gA$widths[2:5], gB$widths[2:5])
+ gA$widths[2:5] <- as.list(maxWidth)
+ gB$widths[2:5] <- as.list(maxWidth)
+ grid.arrange(gA, gB, ncol=1)
+
+```
+
+---
+## Career counseling
+### Do you think choice of degree would have been better if you were provided career counseling before admission to a university?
+
+| Response | %age  |
+|----------|-------|
+| Yes      | 68.8% |
+| No       | 13.4% |
+| Maybe    | 17.9% |
+
+---
+### Do you think career counseling be mandatory?
+| Response          | % response |
+|-------------------|-------------|
+| Strongly agree    | 67.5%       |
+|                   |             |
+| Agree             | 26.3%       |
+|                   |             |
+| Nuetral           | 5.5%        |
+|                   |             |
+| Disagree          | 0.7%        |
+|                   |             |
+| Strongly Disagree | 0%          |
+
+---
+
+## Average earnings per month in USD by qualification
+
+| Qualification | Earnings (USD) |
+|---------------|----------------|
+| Matric        | 165.54         |
+| Intermediate  | 156.76         |
+| Bachelor      | 198.94         |
+| Masters       | 117.54         |
+| PhDs          | 350.00         |
+
+---
+
+# Digital Era vs Industrial HE
+
+## 25 million youth aged 17-23
+## Youth fate: Parents background, region of residence
+## College and Universities: Only for previlidged
+## Govt and educational leaders dont think to make education inclusive
+## Excellence through narrowness, small numbers, big classes not any good , expansion not good 
+
+---
+class: inverse title-slide
+
+## Equity and fairness are not in picture 
+## Present universities model built on exclusivity 
+## Cost can not be reduced unless we scale higher education
+## Main question: How to drive human capital to scale
+
+---
+class: middle center
+background-image: url(wave.gif)
+background-position: 100% 0%
+background-size: contain
+
+##  Flexible Learning System 
+
+### To reach and upskill and or reskill 10s of millions, a sytem of enter, exit, stay away, enter, exit....
+
+---
+
+class: left middle  hide_logo 
+background-image: url(cber.png)
+background-position: 80% 0%
+background-size: 40%
+
+> # .big[“The ability to learn faster than your competitors may be the only sustainable competitive advantage.”] 
+
+.footnote[Peter Senge, ‘The Fifth Discipline’]
+
+---
+class: top left
+background-image: url(jobs.jpg)
+background-size: cover
+.pull-right[![](yes.gif)]
+
+
+# ABL : Always Be Learning.
+
+<span role="img" aria-label="Preparing for jobs which not exist yet"></span> 
+
+

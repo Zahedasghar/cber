@@ -1,6 +1,6 @@
 ---
 title: "2nd International Conference, CBER IBA"
-subtitle: "Future Jobs and Future of Universities"
+subtitle: "Challenges for Future Jobs and Future of Universities"
 author: "Zahid Asghar"
 institute: "Quaid-i-Azam University, Islamabad"
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -61,15 +61,28 @@ background-image: url(cber.png)
 background-position: 100% 0%
 background-size: 40% 
 
-## Introduction 
+## Overview
 
-### stangnant export, stagnant productivity
-### Future Job Challenges : AI, ML, Robotics
-### Survey results
-### Learning Ecosystem
-> Thinking from forced feed or factory model to new higher education system
+--
+
+### stangnant export, stagnant productivity 
+
+--
+
+### AI, ML, Robotics : Future Jobs Challenges
+
+--
+### Graduates awareness and readiness for opportunities
+
+--
+
+> ### Thinking from forced feed or factory model to new higher education system
+
+--
 
 ### Industria era vs digital era higher education system
+
+--
 
 ### Way-forward
 
@@ -81,7 +94,7 @@ background-position: 100% 0%
 background-size: 40% 
 
 
-# .orange[ Productivity and Trade Gap] 
+# .orange[ Productivity and BOT] 
 .pull-left[<img 
 src="productivity_stagnation.png" 
 alt = "Productivity comparison with India and Bangladesh"
@@ -98,44 +111,7 @@ width="px"
 ]
 
 ---
-class: top left  
-![](reskilling.gif)
 
-
----
-![be smart](smart.gif)
----
-
-![Reskill](reskill.gif)
-
----
-
-![Future](Future.gif)
-
-
----
-class: top left  hide_logo 
-background-image: url(cber.png)
-background-position: 100% 0%
-background-size: 40%
-
-
-# Skill-gap
-
-> ##   .pink[Gone are the days of a straight-line path through college to work to promotion to career to retirement.]
-
-.pull-left[
-## Upskilling  
-### .pink[Upskilling is deepening your knowledge and skills in your current domain.]  
-
-]
-
---
-.pull-right[
-## Reskilling
-### .pink[Reskilling is extending your knowledge and skills to new domains.]
-]
----
 .pull-left[
 ### Single does of education
 <img 
@@ -182,27 +158,55 @@ width="500px"
 ] <!--end of pull right--> 
 
 ---
-class: left middle  hide_logo 
+class: top left  hide_logo 
 background-image: url(cber.png)
-background-position: 80% 0%
+background-position: 100% 0%
 background-size: 40%
 
-> # .big[“The ability to learn faster than your competitors may be the only sustainable competitive advantage.”] 
 
-.footnote[Peter Senge, ‘The Fifth Discipline’]
+# Skill-gap
 
+> ##   .pink[Gone are the days of a straight-line path through college to work to promotion to career to retirement.]
+
+.pull-left[
+## Upskilling  
+### .pink[Upskilling is deepening your knowledge and skills in your current domain.]  
+
+]
+
+--
+.pull-right[
+## Reskilling
+### .pink[Reskilling is extending your knowledge and skills to new domains.]
+]
 ---
-
-class: top left
-background-image: url(jobs.jpg)
+class:
+background-image: url(Future.gif)
+background-position: 100% 0%
 background-size: cover
 
-# ABL : Always Be Learning.
-
-<span role="img" aria-label="Preparing for jobs which not exist yet"></span> 
-
 ---
 
+
+class: top left 
+background-image: url(reskilling.gif)
+background-position: 100% 0%
+background-size: cover 
+
+
+---
+class:
+background-image: url(reskill.gif)
+background-position: 100% 0%
+background-size: cover
+
+---
+class:   
+background-image: url(smart.gif)
+background-position: 100% 0%
+background-size: 70%
+
+---
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(readr)
@@ -225,14 +229,50 @@ career<-career %>% rename(
 #career %>% select(comm_skills) %>% group_by(comm_skills) %>% 
 #  summarise(n=n()) %>% 
 #  mutate(freq = n*100 / sum(n))
-library(stringr)
-c1<-career %>% select(comm_skills) %>% ggplot(aes(x=comm_skills))+geom_bar()+labs(title = "How would you rate your strength \n in the following career skills?")+theme_minimal()+coord_flip()
 
 ```
 
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+c1 <- 
+  career %>% 
+  select(comm_skills) %>% 
+  mutate(comm_skills = fct_relevel(.f = comm_skills, c("Weak", "In-between", "Strong", "Very Strong"))) %>%
+  ggplot(aes(x=comm_skills)) + 
+  geom_bar() + 
+  scale_y_continuous(expand = c(0, 0), breaks = scales::pretty_breaks(15)) +
+  labs(
+    title = "How would you rate your strength  in the following career skills?"
+  , x     = "Common Skills"
+  , y     = "Frequency"
+    ) + 
+  theme_classic() + 
+  coord_flip() +
+  theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
+```
+
+
 ```{r echo=FALSE}
 c2<-career %>% select(career_entry) %>% 
-  ggplot(aes(x=career_entry))+geom_bar(position = 'dodge')+labs(title = "How do you feel about career  planning?")+theme_minimal()+coord_flip()
+  ggplot(aes(x=career_entry))+geom_bar(position = 'dodge')+labs(title = "How do you feel about career  planning?")+theme_minimal()+coord_flip()+theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
 gA1 <- ggplotGrob(c1)
  gB1 <- ggplotGrob(c2)
  maxWidth = grid::unit.pmax(gA1$widths[2:5], gB1$widths[2:5])
@@ -241,8 +281,18 @@ gA1 <- ggplotGrob(c1)
 
 ```
 
+
 ```{r echo=FALSE, warning=FALSE}
-c3<- career %>% select(group_talk) %>% ggplot(aes(x=group_talk))+geom_bar(position = 'dodge')+labs(title = "How do you feel about career planning?")+theme_minimal()+coord_flip()
+c3<- career %>% select(group_talk) %>% ggplot(aes(x=group_talk))+geom_bar(position = 'dodge')+labs(title = "How do you feel about career planning?")+theme_minimal()+coord_flip()+theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
 
 
 ```
@@ -251,11 +301,19 @@ c3<- career %>% select(group_talk) %>% ggplot(aes(x=group_talk))+geom_bar(positi
 ## Skill Strength
 
 ```{r echo=FALSE, warning=FALSE}
-c4<-career %>% select(skill_strengths) %>% ggplot(aes(x=skill_strengths))+geom_bar(position = 'dodge')+labs(title = "Can you list your strengths related \n to the skills you possess?")+theme_minimal()+coord_flip()
+c4<-career %>% select(skill_strengths) %>% ggplot(aes(x=skill_strengths))+geom_bar(position = 'dodge')+labs(title = "Can you list your strengths related \n to the skills you possess?")+theme_minimal()+coord_flip()+theme(
+        plot.title      = element_text(hjust = 0.5, size = 18, face = "bold")
+      , plot.subtitle   = element_text(hjust = 0.5)
+      , axis.text.x     = element_text(size = 12, face = "bold")
+      , axis.text.y     = element_text(size = 12, face = "bold")
+      , strip.text.x    = element_text(size = 12, face = "bold")
+      , axis.title.x    = element_text(size = 14, face = "bold")
+      , axis.title.y    = element_text(size = 14, face = "bold")
+      )
+
 
 ```
 
---- 
 
 ```{r echo=FALSE, warning=FALSE}
 
@@ -367,33 +425,52 @@ gA <- ggplotGrob(p1)
 
 ---
 
-## Future Universities
+# Digital Era vs Industrial HE
 
-### Insufficient work: very slow process and remains out of reach
-### Youth fate: Parents background, region of residence
-### College and Universities: Only for few and previlidged
-### Govt and educational leaders dont think to make education inclusive
-### Excellence through narrowness, small numbers, big classes not any good , expansion not good 
-### Equity and fairness are not in picture 
-
----
-class: 
-
-### Present universities model built on exclusivity 
-### Cost can not be reduced unless we scale higher education
-### Main question: How to drive human capital to scale
-
-Talent uninspiredm, talent uneducated
-90 million youth , how it can have access to education 24/7 
-
-
+## 25 million youth aged 17-23
+## Youth fate: Parents background, region of residence
+## College and Universities: Only for previlidged
+## Govt and educational leaders dont think to make education inclusive
+## Excellence through narrowness, small numbers, big classes not any good , expansion not good 
 
 ---
+class: inverse title-slide
 
-## In/Out Flexible System 
-wave pattern: enter, exit, stay away, enter, exit....
+## Equity and fairness are not in picture 
+## Present universities model built on exclusivity 
+## Cost can not be reduced unless we scale higher education
+## Main question: How to drive human capital to scale
 
-<i class="fa-regular fa-file-waveform"></i>
+---
+class: middle center
+background-image: url(wave.gif)
+background-position: 100% 0%
+background-size: contain
 
+##  Flexible Learning System 
+
+### To reach and upskill and or reskill 10s of millions, a sytem of enter, exit, stay away, enter, exit....
+
+---
+
+class: left middle  hide_logo 
+background-image: url(cber.png)
+background-position: 80% 0%
+background-size: 40%
+
+> # .big[“The ability to learn faster than your competitors may be the only sustainable competitive advantage.”] 
+
+.footnote[Peter Senge, ‘The Fifth Discipline’]
+
+---
+class: top left
+background-image: url(jobs.jpg)
+background-size: cover
+.pull-right[![](yes.gif)]
+
+
+# ABL : Always Be Learning.
+
+<span role="img" aria-label="Preparing for jobs which not exist yet"></span> 
 
 
